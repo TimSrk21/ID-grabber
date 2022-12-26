@@ -1,0 +1,21 @@
+{
+	"name": "ID grabber",
+	"description": "ID grabber",
+	"version": "1.0",
+	"manifest_version": 3,
+	"icons": {"128": "logo.png"},
+	"options_page": "options.html",
+	"action": {
+	"default_popup": "popup.html"
+	},
+	"content_security_policy": {
+	  "extension_page": "default-src 'self'; connect-src https://app.studytogether.com/ data: blob: filesystem:;"
+	},
+	"permissions": [
+		"storage",
+		"cookies",
+		"tabs",
+		"clipboardWrite"
+	],
+	"host_permissions": ["https://app.studytogether.com/"]
+}
