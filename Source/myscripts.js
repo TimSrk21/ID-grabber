@@ -37,8 +37,11 @@ async function getfetch(id) {
   "mode": "cors",
   "credentials": "omit"
 	}).then(x => x.text())
-	document.getElementById("fetchID").innerHTML = JSON.parse(obj)[0].data.userData.id
-	document.getElementById('copy-btn').addEventListener('click', copy(`${JSON.parse(obj)[0].data.userData.id}`))
+	document.getElementById("fetchID").innerHTML = "Widget bot ID: "+ JSON.parse(obj)[0].data.userData.id + "    "
+  var discordID = JSON.parse(obj)[0].data.userData.avatarUrl
+  if(discordID.startsWith('https://cdn.discordapp.com'))
+    document.getElementById("discordID").innerHTML = "Discord ID: " + discordID.slice(35,53)
+  document.getElementById('copy-btn').addEventListener('click', copy(`${JSON.parse(obj)[0].data.userData.id}`))
 }
 
 function copy(text) {
