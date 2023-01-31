@@ -41,7 +41,7 @@ async function getfetch(id) {
   var discordID = JSON.parse(obj)[0].data.userData.avatarUrl
   if(discordID.startsWith('https://cdn.discordapp.com')){
     const btn = document.getElementById('discord-copy-btn')
-    btn.addEventListener('click', copy(`${JSON.parse(obj)[0].data.userData.id}`))
+    btn.addEventListener('click', copy(`${discordID.slice(35,53)}`))
     btn.removeAttribute("hidden")
     document.getElementById("discordID").innerHTML = "Discord ID: " + discordID.slice(35,53)
   }
