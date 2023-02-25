@@ -1,0 +1,63 @@
+html body {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,31,31,1) 50%, rgba(0,0,0,1) 100%) !important;
+	color: color: rgb(220, 220, 220);
+}
+
+.bg-gray-400{
+	background: rgba(0,0,0,0) !important;
+}
+
+.shadow-gray-400{
+	--tw-shadow-color: revert !important;
+}
+
+.shadow-xl{
+	background: radial-gradient(circle, rgba(0, 0, 0, 0.85) 60%, rgba(0, 0, 0, 0) 100%) !important;
+}
+
+.text-gray-300, .text--large{
+	color: rgb(220, 220, 220) !important;
+}
+
+.bg-white{
+	background: black !important;
+}
+
+.text-xs, .text-black, .text-xs, .text-xs{
+	color: white !important;
+}
+
+span{
+	color: white !important;
+}
+
+button, p, select{
+	color: white !important;
+}
+
+.navigation__content{
+	background: black;
+    border-block-color: white;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.navigation__inner{
+	background: transparent !important;
+}
+
+.jsx-2145134340 div{
+	color: white !important;
+}
+
+.bg-secondary-400, .bg-\[\#F7F3F8\], .btn-secondary{
+	background: rgb(38, 38, 38) !important;
+}
+
+:root {
+	--tw-shadow: rgb(0,0,0) !important;
+}
+
+.cursor-pointer.navigation__link.relative.active{
+	background: gray;
+}

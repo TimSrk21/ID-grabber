@@ -7,6 +7,16 @@
 </html>
 
 <body style="min-width:360px; background-color:#27110f; color:#FFFFFF;">
+	<div class="container">
+		<button type=button id="grid-btn-1">NoChat</button>
+		<button type=button id="grid-btn-2">NoCam</button>
+		<button type=button id="grid-btn-3">Distracting SS</button>
+		
+		<button type=button id="grid-btn-4" hidden>4copy</button>
+		<button type=button id="grid-btn-5" hidden>5copy</button>
+		<button type=button id="grid-btn-6" hidden>6copy</button>
+	</div>
+
 	<div style="margin-bottom:15px;">
 		<button type=button id="copy-btn">copy</button>
 		<label id="fetchID">Loading...</label>
@@ -30,5 +40,15 @@
 		background-image: url("https://app.studytogether.com/favicon.ico");
 		background-repeat: no-repeat;
 		background-size: 330px 330px;
+		background-blend-mode: darken;
+	}
+	
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 30px 30px;
+		column-gap: 10px;
+		row-gap: 15px;
+		height: auto;
 	}
 </style>

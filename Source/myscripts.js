@@ -11,6 +11,17 @@ window.onload = function() {
 			document.getElementById('copy-btn').style.display = "none"
 		}
 	})
+	
+	document.getElementById('grid-btn-1').addEventListener('click', async () => await copy(
+	`Hi there! I am a member from the ST Staff team. You just reported a user but we can't seem to see any rule-breaking message. Could you give us some more context?`))
+	document.getElementById('grid-btn-2').addEventListener('click', async () => await copy(
+	`Hi there! I am a member from the ST Staff team. You just reported a user but we can't seem to see any rule-breaking cam activity. Could you give us some more context?`))
+	document.getElementById('grid-btn-3').addEventListener('click', async () => await copy(
+	`Hi there! I am a member from the ST Staff team. please note that study calls are designed for studying and productive tasks only, distracting screenshare isn't allowed (https://www.studytogether.com/rules)`))
+	
+	// document.getElementById('grid-btn-4').addEventListener('click', async () => await copy(`${JSON.parse(obj)[0].data.userData.id}`))
+	// document.getElementById('grid-btn-5').addEventListener('click', async () => await copy(`${JSON.parse(obj)[0].data.userData.id}`))
+	// document.getElementById('grid-btn-6').addEventListener('click', async () => await copy(`${JSON.parse(obj)[0].data.userData.id}`))
 }
 	
 async function getfetch(id) {
@@ -41,15 +52,15 @@ async function getfetch(id) {
   var discordID = JSON.parse(obj)[0].data.userData.avatarUrl
   if(discordID.startsWith('https://cdn.discordapp.com')){
     const btn = document.getElementById('discord-copy-btn')
-    btn.addEventListener('click', copy(`${discordID.slice(35,53)}`))
+    btn.addEventListener('click', async () => await copy(`${discordID.slice(35,53)}`))
     btn.removeAttribute("hidden")
     document.getElementById("discordID").innerHTML = "Discord ID: " + discordID.slice(35,53)
   }
     
-  document.getElementById('copy-btn').addEventListener('click', copy(`${JSON.parse(obj)[0].data.userData.id}`))
+  document.getElementById('copy-btn').addEventListener('click', async () => await copy(`${JSON.parse(obj)[0].data.userData.id}`))
 }
 
-function copy(text) {
+async function copy(text) {
   const ta = document.createElement('textarea');
   ta.style.cssText = 'opacity:0; position:fixed; width:1px; height:1px; top:0; left:0;';
 	ta.value = text;
