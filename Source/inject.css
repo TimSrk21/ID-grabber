@@ -1,6 +1,6 @@
 html body {
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,31,31,1) 50%, rgba(0,0,0,1) 100%) !important;
-	color: color: rgb(220, 220, 220);
+	color: rgb(220, 220, 220) !important;
 }
 
 .bg-gray-400{

@@ -15,10 +15,13 @@
 		"storage",
 		"cookies",
 		"tabs",
-		"clipboardWrite"
+		"clipboardWrite",
+		"activeTab",
+		"scripting"
 	],
-	"content_scripts": [
-        
-    ],
+	"web_accessible_resources": [{ 
+	  "resources": ["inject.css"],
+	  "matches": ["<all_urls>"]
+	}],
 	"host_permissions": ["https://app.studytogether.com/", "https://widgetbot.io/"]
 }

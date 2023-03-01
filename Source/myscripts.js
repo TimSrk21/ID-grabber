@@ -22,8 +22,32 @@ window.onload = function() {
 	// document.getElementById('grid-btn-4').addEventListener('click', async () => await copy(`${JSON.parse(obj)[0].data.userData.id}`))
 	// document.getElementById('grid-btn-5').addEventListener('click', async () => await copy(`${JSON.parse(obj)[0].data.userData.id}`))
 	// document.getElementById('grid-btn-6').addEventListener('click', async () => await copy(`${JSON.parse(obj)[0].data.userData.id}`))
-}
+	const sw = document.getElementById('darkmode_switch')
+	chrome.storage.local.get({darkmode_toggle:false}, (v) => {sw.checked = v.darkmode_toggle; console.log(v.darkmode_toggle)});
 	
+	sw.addEventListener('change', () => {
+		if (sw.checked) {
+			chrome.scripting
+				.registerContentScripts([{
+					id: "tango-going-dark",
+					css: ["inject.css"],
+					persistAcrossSessions: false,
+					matches: ["https://app.studytogether.com/*", "https://widgetbot.io/*"],
+				}])
+				.then(() => {
+					chrome.storage.local.set({darkmode_toggle: true}, () => {chrome.tabs.reload()})
+				})
+				.catch((err) => console.warn("unexpected error", err))
+		} else {
+			chrome.scripting
+				.unregisterContentScripts({ ids: ["tango-going-dark"] })
+				.then(() => {
+					chrome.storage.local.set({darkmode_toggle: false}, () => {chrome.tabs.reload()})
+				})
+		}
+	});
+}
+
 async function getfetch(id) {
 	var token = ""
 	chrome.cookies.getAll({domain: "app.studytogether.com"}, function(cookies) {
